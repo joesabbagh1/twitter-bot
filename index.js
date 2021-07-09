@@ -6,7 +6,6 @@ var T = new Twit(config);
 //first page
 T.get('search/tweets', { q: '#FreeFromHijab', count: 100 }, function gotData(err, data, response) {
     var tweets = data.statuses;
-    var last_id = tweets[tweets.length - 1].id_str;
 
     for (let i = 0; i < tweets.length; i++) {
         if (typeof tweets[i].entities.media != "undefined") {
@@ -48,6 +47,7 @@ T.get('search/tweets', { q: '#FreeFromHijab', count: 100 }, function gotData(err
     })
 
     //the id of the last tweet we used
+    // var last_id = tweets[tweets.length - 1].id_str;
 
     //Next page
     // T.get('search/tweets', { q: '#FreeFromHijab', count: 200, last_id: last_id }, function gotData(err, data, response) {
