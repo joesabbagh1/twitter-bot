@@ -4,7 +4,7 @@ var fs = require('fs');
 var T = new Twit(config);
 
 //first page
-T.get('search/tweets', { q: '#FreeFromHijab', count: 100 }, function gotData(err, data, response) {
+T.get('search/tweets', { q: '', count: 100 }, function gotData(err, data, response) {
     var tweets = data.statuses;
 
     for (let i = 0; i < tweets.length; i++) {
@@ -50,7 +50,7 @@ T.get('search/tweets', { q: '#FreeFromHijab', count: 100 }, function gotData(err
     // var last_id = tweets[tweets.length - 1].id_str;
 
     //Next page
-    // T.get('search/tweets', { q: '#FreeFromHijab', count: 200, last_id: last_id }, function gotData(err, data, response) {
+    // T.get('search/tweets', { q: '', count: 200, last_id: last_id }, function gotData(err, data, response) {
     //     for (let i = 0; i < tweets.length; i++) {
     //         if (typeof tweets[i].entities.media != "undefined") {
 
